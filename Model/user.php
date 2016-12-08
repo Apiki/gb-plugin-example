@@ -8,11 +8,10 @@ if ( ! function_exists( 'add_action' ) ) {
 
 use GB\API;
 
-class NavMenu extends API\Post
+class User extends API\User
 {
 	public $metas = array(
-		'color' => array(),
+		'city_and_post' => array(),
+		'street'        => array(),
 	);
-
-	const POST_TYPE = 'nav_menu_item';
 }

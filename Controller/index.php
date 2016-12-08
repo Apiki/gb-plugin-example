@@ -11,3 +11,4 @@ App::uses( 'Controller', 'events' );
 App::uses( 'Controller', 'environments' );
 App::uses( 'Controller', 'widgets' );
 App::uses( 'Controller', 'nav-menus' );
+App::uses( 'Controller', 'users' );

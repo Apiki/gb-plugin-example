@@ -44,6 +44,7 @@ class Core extends Loader
 			'Environments',
 			'Widgets',
 			'NavMenus',
+			'Users',
 		);
 
 		$this->load_controllers( $controllers );
