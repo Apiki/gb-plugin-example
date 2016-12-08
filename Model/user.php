@@ -11,7 +11,10 @@ use GB\API;
 class User extends API\User
 {
 	public $metas = array(
-		'city_and_post' => array(),
-		'street'        => array(),
+		'city_and_post'    => array(),
+		'street'           => array(),
+		'professional_exp' => array(
+			'type' => 'complex',
+		),
 	);
 }
