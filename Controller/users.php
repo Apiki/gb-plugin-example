@@ -37,7 +37,12 @@ class Users_Controller extends API\Users
 								Field::make( 'textarea', 'activities', 'Atividades desempenhadas' )
 									->set_required( true ),
 							)
-						),
+						)
+						->set_header_template('
+							<# if (company && office) { #>
+								{{ company }}, {{ office }}
+							<# } #>
+						'),
 				)
 			);
 	}
