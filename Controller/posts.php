@@ -29,7 +29,15 @@ class Posts_Controller extends Post_Type
 			->add_fields(
 				array(
 					Field::make( 'map', 'location' )->set_position( 37.423156, -122.084917, 14 ),
-					Field::make( 'choose_sidebar', 'custom_sidebar', 'Sidebar Customizada' ),
+					Field::make( 'radio_image', 'custom_sidebar', 'Sidebar Customizada' )
+						->add_options(
+							array(
+								''      => 'https://blog.apiki.com/wp-content/themes/Newspaper/images/panel/sidebar/sidebar-default.png',
+								'left'  => 'https://blog.apiki.com/wp-content/themes/Newspaper/images/panel/sidebar/sidebar-left.png',
+								'full'  => 'https://blog.apiki.com/wp-content/themes/Newspaper/images/panel/sidebar/sidebar-full.png',
+								'right' => 'https://blog.apiki.com/wp-content/themes/Newspaper/images/panel/sidebar/sidebar-right.png',
+							)
+						),
 					Field::make( 'complex', 'gallery', 'Galeria' )
 						->setup_labels( $employees_labels )
 						->set_layout( 'tabbed-horizontal' )

@@ -20,34 +20,12 @@ if ( ! class_exists( 'GB\API\App' ) ) {
 	return;
 }
 
-class App
+use GB\API;
+
+class App extends API\App
 {
-	const PLUGIN_SLUG = 'gb-plugin-example';
-
-	public static function uses( $location, $class_name = 'index' )
-	{
-		include "{$location}/{$class_name}.php";
-	}
-
-	public static function plugins_url( $path )
-	{
-		return plugins_url( $path, __FILE__ );
-	}
-
-	public static function plugin_dir_path( $path )
-	{
-		return plugin_dir_path( __FILE__ ) . $path;
-	}
-
-	public static function filemtime( $path )
-	{
-		return filemtime( self::plugin_dir_path( $path ) );
-	}
-
-	public static function load_textdomain()
-	{
-		load_plugin_textdomain( self::PLUGIN_SLUG, false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
-	}
+	const SLUG = 'gb-plugin-example';
+	const PATH = 'gb-plugin-example';
 }
 
 App::uses( 'Config', 'core' );

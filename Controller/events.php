@@ -30,7 +30,7 @@ class Events_Controller extends Post_Type
 	{
 		return array(
 			'menu_icon' => 'dashicons-calendar-alt',
-			'rewrite'   => array( 'slug' => __( 'evento', App::PLUGIN_SLUG ) ),
+			'rewrite'   => array( 'slug' => __( 'evento', App::SLUG ) ),
 		);
 	}
 }

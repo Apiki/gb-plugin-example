@@ -13,6 +13,7 @@ App::uses( 'Helper' );
 
 class Core extends Loader
 {
+	const SLUG = 'gb-plugin-example';
 	/**
 	 * Namespace
 	 *
@@ -36,7 +37,7 @@ class Core extends Loader
 
 	public function initialize()
 	{
-		add_action( 'plugins_loaded', array( "{$this->namespace}\App", 'load_textdomain' ) );
+		add_action( 'init', array( &$this, 'load_textdomain' ) );
 
 		$controllers = array(
 			'Posts',
@@ -48,6 +49,11 @@ class Core extends Loader
 		);
 
 		$this->load_controllers( $controllers );
+	}
+
+	public function load_textdomain()
+	{
+		load_plugin_textdomain( App::SLUG, false, App::plugin_dir_path( 'languages' ) );
 	}
 
 	public function activate()
@@ -65,7 +71,7 @@ class Core extends Loader
 		$this->load_wp_media();
 
 		wp_enqueue_script(
-			'admin-script-' . App::PLUGIN_SLUG,
+			'admin-script-' . App::SLUG,
 			App::plugins_url( '/assets/javascripts/built.js' ),
 			array( 'jquery', 'admin-script-apiki-wp-api' ),
 			App::filemtime( 'assets/javascripts/built.js' ),
@@ -76,7 +82,7 @@ class Core extends Loader
 	public function styles_admin()
 	{
 		wp_enqueue_style(
-			'admin-style-' . App::PLUGIN_SLUG,
+			'admin-style-' . App::SLUG,
 			App::plugins_url( 'assets/stylesheets/style.css' ),
 			array( 'admin-css-apiki-wp-api' ),
 			App::filemtime( 'assets/stylesheets/style.css' )
