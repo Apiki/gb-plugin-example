@@ -1,15 +1,17 @@
 <?php
 
-namespace GB\Example;
+namespace GB\Example\Widget;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
 use GB\API\Implement_Widget;
+use GB\Example\Model\Event;
+
 use Carbon_Fields\Field;
 
-class Events_Widget extends Implement_Widget
+class Events extends Implement_Widget
 {
 	public function __construct()
 	{

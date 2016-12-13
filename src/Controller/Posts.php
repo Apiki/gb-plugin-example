@@ -1,18 +1,18 @@
 <?php
 
-namespace GB\Example;
+namespace GB\Example\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
 use GB\API\Post_Type;
+use GB\Example\Model\Post;
+
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-App::uses( 'Model', 'post' );
-
-class Posts_Controller extends Post_Type
+class Posts extends Post_Type
 {
 	public $is_register = false;
 	public $name        = Post::POST_TYPE;

@@ -1,6 +1,6 @@
 <?php
 
-namespace GB\Example;
+namespace GB\Example\Model;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
@@ -8,7 +8,7 @@ if ( ! function_exists( 'add_action' ) ) {
 
 use GB\API;
 
-class NavMenu extends API\Post
+class Nav_Menu extends API\Post
 {
 	public $metas = array(
 		'color' => array(),

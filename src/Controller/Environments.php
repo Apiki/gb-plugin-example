@@ -1,18 +1,19 @@
 <?php
 
-namespace GB\Example;
+namespace GB\Example\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
 use GB\API\Taxonomy;
+use GB\Example\Model\Environment;
+use GB\Example\Model\Event;
+
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-App::uses( 'Model', 'environment' );
-
-class Environments_Controller extends Taxonomy
+class Environments extends Taxonomy
 {
 	public $name            = Environment::SLUG;
 	public $capability_type = Environment::SLUG;

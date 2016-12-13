@@ -1,6 +1,6 @@
 <?php
 
-namespace GB\Example;
+namespace GB\Example\Model;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );

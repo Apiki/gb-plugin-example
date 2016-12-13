@@ -8,32 +8,9 @@ if ( ! function_exists( 'add_action' ) ) {
 
 use GB\API\Loader;
 
-App::uses( 'Controller' );
-App::uses( 'Helper' );
-
 class Core extends Loader
 {
 	const SLUG = 'gb-plugin-example';
-	/**
-	 * Namespace
-	 *
-	 * @since 1.1
-	 * @var string
-	 */
-	public $namespace = 'GB\Example';
-
-	/**
-	 * Pages Enqueue Media
-	 *
-	 * @since 1.1
-	 * @var array
-	 */
-	public $pages_enqueue_media = array(
-		'post.php',
-		'post-new.php',
-		'themes.php',
-		'edit-tags.php',
-	);
 
 	public function initialize()
 	{
@@ -44,7 +21,7 @@ class Core extends Loader
 			'Events',
 			'Environments',
 			'Widgets',
-			'NavMenus',
+			'Nav_Menus',
 			'Users',
 		);
 
@@ -53,7 +30,7 @@ class Core extends Loader
 
 	public function load_textdomain()
 	{
-		load_plugin_textdomain( App::SLUG, false, App::plugin_dir_path( 'languages' ) );
+		load_plugin_textdomain( $this::SLUG, false, self::plugin_dir_path( 'languages' ) );
 	}
 
 	public function activate()

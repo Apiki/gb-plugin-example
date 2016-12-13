@@ -1,6 +1,6 @@
 <?php
 
-namespace GB\Example;
+namespace GB\Example\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
@@ -8,11 +8,9 @@ if ( ! function_exists( 'add_action' ) ) {
 
 use GB\API\Widget;
 
-App::uses( 'Widget', 'events' );
-
-class Widgets_Controller extends Widget
+class Widgets extends Widget
 {
 	public $available_widgets = array(
-		'GB\Example\Events_Widget',
+		'GB\Example\Widget\Events',
 	);
 }

@@ -1,18 +1,18 @@
 <?php
 
-namespace GB\Example;
+namespace GB\Example\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
 use GB\API;
+use GB\Example\Model\User;
+
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-App::uses( 'Model', 'user' );
-
-class Users_Controller extends API\Users
+class Users extends API\Users
 {
 	public function initialize()
 	{

@@ -1,21 +1,21 @@
 <?php
 
-namespace GB\Example;
+namespace GB\Example\Controller;
 
 if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
 use GB\API\Post_Type;
+use GB\Example\Model\Nav_Menu;
+
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-App::uses( 'Model', 'nav-menu' );
-
-class NavMenus_Controller extends Post_Type
+class Nav_Menus extends Post_Type
 {
 	public $is_register = false;
-	public $name        = NavMenu::POST_TYPE;
+	public $name        = Nav_Menu::POST_TYPE;
 
 	public function register_meta_boxes()
 	{
