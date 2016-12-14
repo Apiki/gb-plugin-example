@@ -1,7 +1,12 @@
 {
-  "autoload": {
-    "psr-4": {
-      "GB\\Example\\": "src/"
-    }
+    "name": "apiki/gb-plugin-example",
+    "description": "Ghost Back example.",
+    "type": "wordpress-plugin",
+    "license": "GPL",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "GB\\Example\\": "src/"
+        }
   }
 }
