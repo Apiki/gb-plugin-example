@@ -6,7 +6,7 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\API\Post_Type;
+use GB\API\Controller\Post_Type;
 use GB\Example\Model\Event;
 use GB\Example\Core;
 

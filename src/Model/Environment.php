@@ -6,7 +6,7 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\API\Term;
+use GB\API\Model\Term;
 
 class Environment extends Term
 {

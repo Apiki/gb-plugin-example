@@ -6,13 +6,13 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\API;
+use GB\API\Controller;
 use GB\Example\Model\User;
 
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-class Users extends API\Users
+class Users extends Controller\Users
 {
 	public function initialize()
 	{

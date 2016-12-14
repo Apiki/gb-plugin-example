@@ -6,9 +6,9 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\API;
+use GB\API\Model;
 
-class Post extends API\Post
+class Post extends Model\Post
 {
 	public $metas = array(
 		'location'       => array(),

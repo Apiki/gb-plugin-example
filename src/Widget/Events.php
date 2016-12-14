@@ -6,7 +6,7 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\API\Implement_Widget;
+use GB\API\Widget\Implement_Widget;
 use GB\Example\Model\Event;
 
 use Carbon_Fields\Field;

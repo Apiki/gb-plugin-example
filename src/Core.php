@@ -28,11 +28,6 @@ class Core extends Loader
 		$this->load_controllers( $controllers );
 	}
 
-	public function load_textdomain()
-	{
-		load_plugin_textdomain( $this::SLUG, false, self::plugin_dir_path( 'languages' ) );
-	}
-
 	public function activate()
 	{
 		$controllers = array(

@@ -15,7 +15,7 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-if ( ! class_exists( 'GB\API\App' ) ) {
+if ( ! class_exists( 'GB\API\Core' ) ) {
 	return;
 }
 

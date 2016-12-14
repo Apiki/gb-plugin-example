@@ -6,9 +6,9 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\API;
+use GB\API\Model;
 
-class Nav_Menu extends API\Post
+class Nav_Menu extends Model\Post
 {
 	public $metas = array(
 		'color' => array(),

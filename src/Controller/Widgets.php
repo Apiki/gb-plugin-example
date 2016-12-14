@@ -6,7 +6,7 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\API\Widget;
+use GB\API\Controller\Widget;
 
 class Widgets extends Widget
 {
