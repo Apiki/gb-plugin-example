@@ -6,9 +6,9 @@ if ( ! function_exists( 'add_action' ) ) {
 	exit( 0 );
 }
 
-use GB\API;
+use GB\API\Helper;
 
-class Utils extends API\Utils
+class Utils extends Helper\Utils
 {
 
 }
