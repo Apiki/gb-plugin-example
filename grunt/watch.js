@@ -4,8 +4,8 @@ module.exports =  {
 		tasks : ['sass:dev']
 	},
 	templates : {
-		files: ['handlebars/**/*.hbs'],
-		tasks: ['handlebars:dist']
+		files: ['riot/**/*.tag'],
+		tasks: ['riot:dist']
 	},
 	scripts : {
 		files : '<%= concat.dist.src %>',
