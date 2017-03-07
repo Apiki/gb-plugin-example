@@ -2,7 +2,7 @@ module.exports = {
 	options : {
 		separator : ';'
 	},
-	dist : {
+	dev : {
 		src : [
 			'<%= paths.js %>/libs/*.js',
 			'<%= paths.js %>/templates/*.js',
