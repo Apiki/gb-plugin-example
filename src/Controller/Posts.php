@@ -7,6 +7,7 @@ if ( ! function_exists( 'add_action' ) ) {
 }
 
 use GB\API\Controller\Post_Type;
+use GB\Example\Core;
 use GB\Example\Helper\Utils;
 use GB\Example\Model\Post;
 
@@ -18,21 +19,21 @@ class Posts extends Post_Type
 	public $is_register = false;
 	public $name        = Post::POST_TYPE;
 
-public function initialize()
-{
-	add_filter( 'carbon_fields_save_post_start_date_value', array( &$this, 'format_save_date' ), 10, 3 );
-	add_filter( 'carbon_fields_get_start_date_value', array( &$this, 'format_show_date' ) );
-}
+	public function initialize()
+	{
+		add_filter( 'carbon_fields_save_post_start_date_value', array( &$this, 'format_save_date' ), 10, 3 );
+		add_filter( 'carbon_fields_get_start_date_value', array( &$this, 'format_show_date' ) );
+	}
 
-public function format_save_date( $value, $field, $post_id )
-{
-	return Utils::convert_date_for_sql( $value );
-}
+	public function format_save_date( $value, $field, $post_id )
+	{
+		return Utils::convert_date_for_sql( $value );
+	}
 
-public function format_show_date( $value )
-{
-	return Utils::convert_date_human( $value );
-}
+	public function format_show_date( $value )
+	{
+		return Utils::convert_date_human( $value );
+	}
 
 	public function register_meta_boxes()
 	{
@@ -49,21 +50,12 @@ public function format_show_date( $value )
 					Field::make( 'radio_image', 'custom_sidebar', 'Sidebar Customizada' )
 						->add_options(
 							array(
-								''      => 'https://blog.apiki.com/wp-content/themes/Newspaper/images/panel/sidebar/sidebar-default.png',
-								'left'  => 'https://blog.apiki.com/wp-content/themes/Newspaper/images/panel/sidebar/sidebar-left.png',
-								'full'  => 'https://blog.apiki.com/wp-content/themes/Newspaper/images/panel/sidebar/sidebar-full.png',
-								'right' => 'https://blog.apiki.com/wp-content/themes/Newspaper/images/panel/sidebar/sidebar-right.png',
+								''      => Core::plugins_url( '/assets/images/sidebar-default.png' ),
+								'left'  => Core::plugins_url( '/assets/images/sidebar-left.png' ),
+								'full'  => Core::plugins_url( '/assets/images/sidebar-full.png' ),
+								'right' => Core::plugins_url( '/assets/images/sidebar-right.png' ),
 							)
 						),
-					Field::make( 'date', 'start_date', 'Data' )
-						->set_options(
-							array(
-								'dateFormat' => 'dd/mm/yy',
-							)
-						)
-						->set_mask( '00/00/0000' ),
-					Field::make( 'text', 'money' )
-						->set_mask( '#.##0,00', array( 'reverse' => true ) ),
 					Field::make( 'complex', 'gallery', 'Galeria' )
 						->setup_labels( $employees_labels )
 						->set_layout( 'tabbed-horizontal' )

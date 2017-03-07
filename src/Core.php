@@ -37,27 +37,27 @@ class Core extends Loader
 
 		$this->load_controllers( $controllers, true );
 	}
-	/*
+
 	public function scripts_admin()
 	{
 		$this->load_wp_media();
 
 		wp_enqueue_script(
-			'admin-script-' . App::SLUG,
-			App::plugins_url( '/assets/javascripts/built.js' ),
-			array( 'jquery', 'admin-script-apiki-wp-api' ),
-			App::filemtime( 'assets/javascripts/built.js' ),
+			'admin-script-' . self::SLUG,
+			self::plugins_url( '/assets/javascripts/built.js' ),
+			array( 'jquery', 'admin-script-gb-plugin-api' ),
+			self::filemtime( 'assets/javascripts/built.js' ),
 			true
 		);
 	}
 
 	public function styles_admin()
 	{
-		wp_enqueue_style(
-			'admin-style-' . App::SLUG,
-			App::plugins_url( 'assets/stylesheets/style.css' ),
-			array( 'admin-css-apiki-wp-api' ),
-			App::filemtime( 'assets/stylesheets/style.css' )
-		);
-	}*/
+		// wp_enqueue_style(
+		// 	'admin-style-' . self::SLUG,
+		// 	self::plugins_url( 'assets/stylesheets/style.css' ),
+		// 	array( 'admin-css-gb-plugin-api' ),
+		// 	self::filemtime( 'assets/stylesheets/style.css' )
+		// );
+	}
 }
